@@ -58,7 +58,11 @@ const Principal: React.FC = () => {
         if(!response.status){
             console.log(response)
             if(response.items){
-                SetRepoList(response.items);
+                if(response.items.length > 0){
+                    SetRepoList(response.items);
+                }else{
+                    alert('Nenhum repositório foi encontrado!');
+                }
             }
             else{
                 const arr:IRepo[] = [response];
