@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+    app:
+        container_name: githubsearch-app
+        command: npm start
+        build:
+            context: .
+            dockerfile: githubsearch/Dockerfile
+        volumes:
+            - './githubsearch/ : /app'
+            - '/app/node_modules'
+        ports:
+            - '3001:3000'
