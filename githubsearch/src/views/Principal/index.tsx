@@ -11,16 +11,10 @@ import {
     Button,
     DivInput,
     ButtonText,
-    DivCard,
-    TextElement,
-    DivText,
-    LabelTextElement,
-    Avatar,
-    CardContainer,
-    DivInfos,
-    DivHTMLURL,
 } from './styles';
 
+
+import CardComponent from '../../components/CardComponent';
 
 import {
     ReposRouter,
@@ -78,63 +72,6 @@ const Principal: React.FC = () => {
             alert('Erro na requisição.\nVerifique o valor do nome do usuário e do repositório.')
         }    
     }
-
-
-    const CardElement = (element:IRepo, index:number) =>{
-        
-        return(
-            <DivCard key={index}>
-                <CardContainer>
-                    <Avatar
-                        src={element.owner.avatar_url}
-                    />
-                    <DivInfos>
-                    <DivText>
-                        <LabelTextElement>
-                            Login: 
-                        </LabelTextElement>
-                        <TextElement>
-                            {element.owner.login}
-                        </TextElement>
-                    </DivText>
-                    <DivHTMLURL>
-                        <LabelTextElement>
-                            HTML URL: 
-                        </LabelTextElement>
-                        <TextElement>
-                            {element.html_url}
-                        </TextElement>
-                    </DivHTMLURL>
-                    <DivText>
-                        <LabelTextElement>
-                            Size: 
-                        </LabelTextElement>
-                        <TextElement>
-                            {element.size}
-                        </TextElement>
-                    </DivText>
-                    <DivText>
-                        <LabelTextElement>
-                            Language: 
-                        </LabelTextElement>
-                        <TextElement>
-                            {element.language}
-                        </TextElement>
-                    </DivText>
-                    <DivText>
-                        <LabelTextElement>
-                            Forks Count:  
-                        </LabelTextElement>
-                        <TextElement>
-                            {element.forks_count}
-                        </TextElement>
-                    </DivText>
-                    </DivInfos>
-                </CardContainer>
-            </DivCard>
-        );
-    }
-
   return (
       <>
         <GlobalStyle />
@@ -174,7 +111,7 @@ const Principal: React.FC = () => {
                     
                     repoList.length > 0?
                         repoList.map((element, index) => {
-                           return CardElement(element, index);
+                            return <CardComponent index={index} element={element}  />
                         })
                     :null
                 }
