@@ -1,0 +1,9 @@
+{
+    "colors":{
+        "backgroud-white":"#F0F2F5",
+        "gray":"#AAAAAA",
+        "purple-dark":"#50327c",
+        "purple-light":"#bb86fc"
+    },
+    "border-radius":8
+}
