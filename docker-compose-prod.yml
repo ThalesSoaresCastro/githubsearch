@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+    githubsearch-prod:
+        container_name: githubsearch-prod
+        build:
+          context: './githubsearch'
+          dockerfile: Dockerfile-prod
+        volumes:
+          - ./githubsearch:/app
+          - /app/node_modules
+        ports:
+            - '8080:80'
+        environment:
+          NODE_ENV: production

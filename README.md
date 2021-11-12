@@ -24,7 +24,7 @@ yarn start ou npm run start
 
 ## Executar Projeto com Docker-compose:
 
-### Subindo os containers:
+## Subindo os containers em ambiente de desenvolvimento:
 
 * Sem stack
 
@@ -41,6 +41,37 @@ yarn start ou npm run start
 
 - obs 1: -d serve apenas para que o terminal suba os containers e não fique "travado" na tela de log.
 - obs 2: Nome da stack é totalmente opcional mas facilita ao deixar os containers que tem alguma relação separados por grupos, melhorando o controle, principalmente em ferramentas como portainer.
+
+* Acessar pelo endereço:
+```
+    http://localhost:7887
+```
+
+## Subindo os containers em ambiente de produção, utilizando Nginx:
+
+
+* Sem stack
+
+```
+    docker-compose -f docker-compose-prod.yml up -d
+```
+
+
+* Sem com nome da stack
+
+```
+    docker-compose -p {nome_da_stack} -f docker-compose-prod.yml up -d
+```
+
+- obs 1: -d serve apenas para que o terminal suba os containers e não fique "travado" na tela de log.
+- obs 2: Nome da stack é totalmente opcional mas facilita ao deixar os containers que tem alguma relação separados por grupos, melhorando o controle, principalmente em ferramentas como portainer.
+
+* Acessar pelo endereço:
+```
+    http://localhost:8080
+```
+
+
 
 ### Parando a execução dos containers
 ```
