@@ -1,17 +1,48 @@
-# Estágio nodejs
+# Descrição da aplicação react
 
-# Projeto realizado: Tarefa A
+* O projeto consiste em uma tela única básica, onde o usuário pode pesquisar um determinado repositório dentro do github.Caso deseje, também pode pesquisar pelo nome do repositório junto com o nome do autor do repositório.
+* Como resultado da pesquisa, ele trás informações as informações:
+    - Linguagem que foi utilizada
+    - Quantidade de forks
+    - Tamanho
+    - URL
+    - Login do criador
+    - Foto do perfil do criador.
 
-## Tarefa criada utilizando-se o framework react-js com typescript
-
-** foram utilizadas as libs básicas do react, sem dependências externas do ambiente.
+* Utilizou-se o framework react-js com typescript
 
 ## Executar Projeto fora do ambiente de container:
 
-** Instalação das dependências do reactjs e typescript:
-- yarn install ou npm install
+* Instalação das dependências do reactjs e typescript:
+```
+    yarn install ou npm install
+```
+* Executar projeto:
+```
+yarn start ou npm run start
+```
 
-** Executar projeto:
-- yarn start ou npm run start
+## Executar Projeto com Docker-compose:
 
-** O app está sendo executado na porta padrão do framework(porta 3000).
+### Subindo os containers:
+
+* Sem stack
+
+```
+    docker-compose up -d
+```
+
+
+* Sem com nome da stack
+
+```
+    docker-compose -p {nome_da_stack} up -d
+```
+
+- obs 1: -d serve apenas para que o terminal suba os containers e não fique "travado" na tela de log.
+- obs 2: Nome da stack é totalmente opcional mas facilita ao deixar os containers que tem alguma relação separados por grupos, melhorando o controle, principalmente em ferramentas como portainer.
+
+### Parando a execução dos containers
+```
+    docker-compose down
+```

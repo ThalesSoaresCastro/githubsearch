@@ -1,12 +1,20 @@
-# Imagem de Origem
+# build do app 
 FROM node:14-alpine
+
+RUN mkdir -p /app
+
+ENV PORT 3000
 
 WORKDIR /app
 
-ENV PATH /app/node_modules/.bin:$PATH
+COPY package.json /app
 
-COPY package.json /app/package.json
-RUN npm install --silent
-RUN npm install react-scripts@4.0.3 -g --silent
+RUN npm install
 
-#CMD ["npm", "start"]
+COPY . /app
+
+RUN npm run build
+
+EXPOSE 3000
+
+ENTRYPOINT ["npm", "run"]
