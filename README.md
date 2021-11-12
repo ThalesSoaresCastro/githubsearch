@@ -77,3 +77,7 @@ yarn start ou npm run start
 ```
     docker-compose down
 ```
+
+
+### O projeto foi feito e testado utilizando ubuntu 21.10, como consta na imagem:
+![VersaoLinux](versao_linux.png)
